@@ -1,0 +1,19 @@
+JÁ CRIEI AS ROTAS => BOLAR UMA FORMA DE MANTER O LAYOUT PERSISTENTE (NO APP COLA O LAYOUT MAYBE E O SWITCH FICA DENTRO DO CONTENT MAYBE)
+FALTA ORGANIZAR PAGES E COMPONENTS EM PASTAS
+FALTA ADD REDUX STUFF
+TESTAR SE O HISTORY FUNCIONA (PRA VERIFICAR NAVEGACAO ETC)
+SE PRECISAR JA ORGANIZA ONDE COLOCAR API CALLS
+
+já está configurado o less override do tema, só bolar umas coisa daora depois com as main variables
+https://ant.design/docs/react/customize-theme
+only issue is there is no hot reload.
+
+-> tenta instalar antd darkmode e mexe em cima disso
+-> layout simples acho que já dá : header content footer
+
+em content: indicadores gerais para todo o país
+            procurar display e charts stuff pra mostrar mais especifico
+
+em header paginas: painel geral e sobre
+
+talvez api de SRAG/pneumonia
