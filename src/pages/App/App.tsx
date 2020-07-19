@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Router } from "react-router-dom";
 import { history } from '../../utils/history';
-import { Layout } from 'antd';
+import { Row, Col, Layout } from 'antd';
 import { Dashboard, NotFound, About } from '../index';
 import { Header, Footer } from '../../components';
 import '../../styles/App.less';
@@ -14,12 +14,18 @@ export const App = (): JSX.Element => {
       <Layout className="layout-main">
         <Header />
         <Content className="layout-content">
-          <Switch>
-            <Route exact path='/' component={Dashboard} />
-            <Route path='/dashboard' component={Dashboard} />
-            <Route path='/about' component={About} />
-            <Route component={NotFound} />
-          </Switch>
+          <Row justify="center">
+            <Col span={18}>
+              <div className="content-wrapper">
+                <Switch>
+                  <Route exact path='/' component={Dashboard} />
+                  <Route path='/dashboard' component={Dashboard} />
+                  <Route path='/about' component={About} />
+                  <Route component={NotFound} />
+                </Switch>
+              </div>
+            </Col>
+          </Row>
         </Content>
         <Footer />
       </Layout>

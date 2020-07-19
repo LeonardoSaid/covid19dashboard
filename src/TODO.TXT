@@ -1,16 +1,19 @@
 FALTA ADD REDUX STUFF
 SE PRECISAR JA ORGANIZA ONDE COLOCAR API CALLS
 
+fazer o wrap para content com margin e padding e seila
+faz um background centralizado para conteudo
+e o bg de fora um padrão daora tipo do fav la
+
+also learn to style overflow scroll bar like JT guru
+
+
 já está configurado o less override do tema, só bolar umas coisa daora depois com as main variables
 https://ant.design/docs/react/customize-theme
 only issue is there is no hot reload (maybe you can configure that?).
 
--> layout simples acho que já dá : header content footer
-
 em content: indicadores gerais para todo o país
             procurar display e charts stuff pra mostrar mais especifico
-
-em header paginas: painel geral e sobre
 
 talvez api de SRAG/pneumonia
 
