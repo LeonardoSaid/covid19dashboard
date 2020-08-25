@@ -1,12 +1,23 @@
+priority:
+ -make redux folders
+ -basic routing
+ -basic folders and api call folders
+ -create basic components
+ -connect to api CALLS
+ -then mess with styling and stuff
+ -create basic website for now and move on to other projects
+
+
+
+
+
+
 FALTA ADD REDUX STUFF
 SE PRECISAR JA ORGANIZA ONDE COLOCAR API CALLS
 
 fazer o wrap para content com margin e padding e seila
 faz um background centralizado para conteudo
-e o bg de fora um padrão daora tipo do fav la
-
 also learn to style overflow scroll bar like JT guru
-
 
 já está configurado o less override do tema, só bolar umas coisa daora depois com as main variables
 https://ant.design/docs/react/customize-theme
