@@ -2,15 +2,15 @@ import React from 'react';
 import { Card, Row, Col, Statistic, Skeleton } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 
-export const Dashboard = (props: any): JSX.Element => {
+export const Global = (props: any): JSX.Element => {
     return (
         <React.Fragment>
             <Row gutter={16}>
                 <Col span={8}>
                     <Card bordered>
                         <Statistic
-                            title="Casos confirmados"
-                            value={750000}
+                            title="Casos confirmados mundial"
+                            value={999999999}
                             precision={0}
                             valueStyle={{ color: '#3f8600' }}
                             prefix={<ArrowUpOutlined />}
@@ -22,7 +22,7 @@ export const Dashboard = (props: any): JSX.Element => {
                     <Card bordered>
                         <Statistic
                             title="Óbitos"
-                            value={40500}
+                            value={0}
                             precision={0}
                             valueStyle={{ color: '#cf1322' }}
                             prefix={<ArrowDownOutlined  />}
@@ -34,7 +34,7 @@ export const Dashboard = (props: any): JSX.Element => {
                     <Card bordered>
                         <Statistic
                             title="Casos recuperados"
-                            value={150000}
+                            value={0}
                             precision={0}
                             valueStyle={{ color: '#cf1322' }}
                             prefix={<ArrowDownOutlined  />}
@@ -51,4 +51,4 @@ export const Dashboard = (props: any): JSX.Element => {
     );
 };
 
-export default Dashboard;
+export default Global;

@@ -1,39 +1,21 @@
-priority:
- -make redux folders
- -basic routing
+
  -basic folders and api call folders
  -create basic components
  -connect to api CALLS
  -then mess with styling and stuff
  -create basic website for now and move on to other projects
 
-
-
-
-
-
-FALTA ADD REDUX STUFF
 SE PRECISAR JA ORGANIZA ONDE COLOCAR API CALLS
 
 fazer o wrap para content com margin e padding e seila
 faz um background centralizado para conteudo
 also learn to style overflow scroll bar like JT guru
 
-já está configurado o less override do tema, só bolar umas coisa daora depois com as main variables
+
 https://ant.design/docs/react/customize-theme
-only issue is there is no hot reload (maybe you can configure that?).
+only issue is there is no hot reload (maybe you can configure that?)
 
 em content: indicadores gerais para todo o país
             procurar display e charts stuff pra mostrar mais especifico
 
 talvez api de SRAG/pneumonia
-
-
-react router
-https://reacttraining.com/react-router/web/example/no-match
-
-less
-http://lesscss.org/#
-
-typescript react cheat sheet
-https://github.com/typescript-cheatsheets/react-typescript-cheatsheet

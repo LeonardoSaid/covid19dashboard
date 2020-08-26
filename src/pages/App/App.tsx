@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route, Router } from "react-router-dom";
 import { history } from '../../utils/history';
 import { Row, Col, Layout } from 'antd';
-import { Dashboard, NotFound, About } from '../index';
+import { Dashboard, NotFound, About, Global } from '../index';
 import { Header, Footer } from '../../components';
 import '../../styles/App.less';
 
@@ -20,6 +20,7 @@ export const App = (): JSX.Element => {
                 <Switch>
                   <Route exact path='/' component={Dashboard} />
                   <Route path='/dashboard' component={Dashboard} />
+                  <Route path='/global' component={Global} />
                   <Route path='/about' component={About} />
                   <Route component={NotFound} />
                 </Switch>
