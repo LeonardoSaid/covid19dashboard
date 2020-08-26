@@ -1,8 +1,19 @@
 import React from 'react';
 import { Card, Row, Col, Statistic, Skeleton } from 'antd';
 import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+//import { loadUsers } from '../../store/effects';
+//import { connect } from 'react-redux';
 
 export const Dashboard = (props: any): JSX.Element => {
+    
+    // useEffect( () => {
+    //     try {
+    //         props.loadUsers();
+    //     } catch (e) {
+
+    //     }
+    // },[]);
+
     return (
         <React.Fragment>
             <Row gutter={16}>
@@ -10,7 +21,8 @@ export const Dashboard = (props: any): JSX.Element => {
                     <Card bordered>
                         <Statistic
                             title="Casos confirmados"
-                            value={750000}
+                            //value={props.users && props.users.TotalConfirmed}
+                            value={0}
                             precision={0}
                             valueStyle={{ color: '#3f8600' }}
                             prefix={<ArrowUpOutlined />}
@@ -22,7 +34,8 @@ export const Dashboard = (props: any): JSX.Element => {
                     <Card bordered>
                         <Statistic
                             title="Óbitos"
-                            value={40500}
+                            //value={props.users && props.users.TotalDeaths}
+                            value={0}
                             precision={0}
                             valueStyle={{ color: '#cf1322' }}
                             prefix={<ArrowDownOutlined  />}
@@ -34,7 +47,8 @@ export const Dashboard = (props: any): JSX.Element => {
                     <Card bordered>
                         <Statistic
                             title="Casos recuperados"
-                            value={150000}
+                            //value={props.users && props.users.TotalRecovered}
+                            value={0}
                             precision={0}
                             valueStyle={{ color: '#cf1322' }}
                             prefix={<ArrowDownOutlined  />}
@@ -50,5 +64,16 @@ export const Dashboard = (props: any): JSX.Element => {
         </React.Fragment>
     );
 };
+
+// const mapStateToProps = (state: any) => ({
+//     users: state.users.Global
+// });
+
+// const mapDispatchToProps = { loadUsers }
+
+// export default connect (
+//     mapStateToProps,
+//     mapDispatchToProps
+// )(Dashboard);
 
 export default Dashboard;
