@@ -1,55 +1,23 @@
 import React from 'react';
-import { Card, Row, Col, Statistic, Skeleton } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { Card, Row, Col } from 'antd';
+import { BarChart, StateTable, PieChart, StateSearch, StatisticCard } from '../../components/index';
 
 export const Global = (props: any): JSX.Element => {
     return (
-        <React.Fragment>
+        <>
             <Row gutter={16}>
-                <Col span={8}>
-                    <Card bordered>
-                        <Statistic
-                            title="Casos confirmados mundial"
-                            value={999999999}
-                            precision={0}
-                            valueStyle={{ color: '#3f8600' }}
-                            prefix={<ArrowUpOutlined />}
-                            suffix=""
-                        />
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card bordered>
-                        <Statistic
-                            title="Óbitos"
-                            value={0}
-                            precision={0}
-                            valueStyle={{ color: '#cf1322' }}
-                            prefix={<ArrowDownOutlined  />}
-                            suffix=""
-                        />
-                    </Card>
-                </Col>
-                <Col span={8}>
-                    <Card bordered>
-                        <Statistic
-                            title="Casos recuperados"
-                            value={0}
-                            precision={0}
-                            valueStyle={{ color: '#cf1322' }}
-                            prefix={<ArrowDownOutlined  />}
-                            suffix=""
-                        />
-                    </Card>
-                </Col>
+                <Col span={6}><StatisticCard /></Col>
+                <Col span={6}><StatisticCard /></Col>
+                <Col span={6}><StatisticCard /></Col>
+                <Col span={6}><StatisticCard /></Col>
             </Row>
         
             <Card style={{ marginTop: '2rem' }}>
-                <p>a outra api permite até montar charts desde day one</p>
-                <p>mapa com bandeiras, mapa geo algo assim maybe</p>
-                <p>talvez bar chart com os 20 ou something piores países</p>
+                <p>geo chart, clica nele carrega outro widget abaixo com info e bandeira</p>
+                <p>segunda aba ou info side by side com coluna q mostra um linechart desde day one</p>
+                <p>terceiro widget com bar chart dos piores países e maybe flag table something</p>
             </Card>
-        </React.Fragment>
+        </>
     );
 };
 
