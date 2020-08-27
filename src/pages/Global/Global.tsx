@@ -45,7 +45,9 @@ export const Global = (props: any): JSX.Element => {
             </Row>
         
             <Card style={{ marginTop: '2rem' }}>
-                <Skeleton paragraph={{ rows: 16 }} active />
+                <p>a outra api permite até montar charts desde day one</p>
+                <p>mapa com bandeiras, mapa geo algo assim maybe</p>
+                <p>talvez bar chart com os 20 ou something piores países</p>
             </Card>
         </React.Fragment>
     );
