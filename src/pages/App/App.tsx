@@ -12,7 +12,7 @@ export const App = (): JSX.Element => {
   return (
     <Router history={history}>
       <Layout className="layout-main">
-        <Header />
+        <Header currentLocation={history.location.pathname} />
         <Content className="layout-content">
           <Row justify="center">
             <Col span={18}>
