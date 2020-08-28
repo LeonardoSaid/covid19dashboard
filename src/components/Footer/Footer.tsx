@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from 'antd';
+import { Layout, Divider } from 'antd';
 import '../../styles/Footer.less';
 
 const { Footer } = Layout;
@@ -7,7 +7,11 @@ const { Footer } = Layout;
 export const FooterComponent = (): JSX.Element => {
   return (
     <Footer className="layout-footer">
-        COVID19 Dashboard | Leonardo Said
+        <span style={{ color: '#fff' }}>
+            Licensed under ???
+            <Divider type="vertical" />
+            <a href="github.com">Leonardo Said</a>
+        </span>
     </Footer>
   );
 };
