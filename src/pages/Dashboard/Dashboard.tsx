@@ -22,10 +22,10 @@ export const Dashboard = (props: any): JSX.Element => {
     return (
         <>
             <Row gutter={16}>
-                <Col span={6}><StatisticCard /></Col>
-                <Col span={6}><StatisticCard /></Col>
-                <Col span={6}><StatisticCard /></Col>
-                <Col span={6}><StatisticCard /></Col>
+                <Col span={6}><StatisticCard type={0} /></Col>
+                <Col span={6}><StatisticCard type={1} /></Col>
+                <Col span={6}><StatisticCard type={2} /></Col>
+                <Col span={6}><StatisticCard type={3} /></Col>
             </Row>
 
             <Card style={{ marginTop: '2rem', marginBottom: '2rem' }} title="Comparação dos estados">

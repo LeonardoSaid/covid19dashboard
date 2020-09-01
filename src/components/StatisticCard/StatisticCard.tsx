@@ -1,21 +1,32 @@
 import React from 'react';
-import { Card, Statistic } from 'antd';
-import { ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
+import { Card, Statistic, Row, Col, Avatar } from 'antd';
+import { ArrowUpOutlined, ArrowDownOutlined, ExceptionOutlined, MedicineBoxOutlined, ExperimentOutlined, PercentageOutlined } from '@ant-design/icons';
 
-//to-do here: set up some presets for the cards: confirmed, deaths, recovered and lethal rate
+const titles = ['Confirmados', 'Óbitos', 'Recuperados', 'Letalidade']
+const avatarIcons = [<ExceptionOutlined />, <MedicineBoxOutlined />, <ExperimentOutlined />, <PercentageOutlined />]
+const avatarColors = ['#ff006e', '#fb5607', '#02c39a', '#3a86ff']
 
 export const StatisticCard = (props: any) => {
     return (
         <Card bordered>
-            <Statistic
-                title="card"
-                //value={props.users && props.users.TotalConfirmed}
-                value={0}
-                precision={0}
-                valueStyle={{ color: '#3f8600' }}
-                prefix={<ArrowUpOutlined />}
-                suffix=""
-            />
+            <Row justify="space-between">
+                <Col>
+                    <Statistic
+                        title={<span className="stats-title">{titles[props.type]}</span>}
+                        //value={props.users && props.users.TotalConfirmed}
+                        value={Math.random() * 100000}
+                        precision={0}
+                        valueStyle={{ color: '#303030' }}
+                    />
+                </Col>
+                <Col>
+                    <Avatar size={48} icon={avatarIcons[props.type]} style={{ backgroundColor: avatarColors[props.type] }} />
+                </Col>
+            </Row>
+
+            <Row justify="start" style={{ marginTop: '1rem' }}>
+                <Col><span ><ArrowUpOutlined /> +15% since last month</span></Col>
+            </Row>
         </Card>
     );
 }

@@ -4,7 +4,7 @@ import { history } from '../../utils/history';
 import { Row, Col, Layout } from 'antd';
 import { Dashboard, NotFound, About, Global } from '../index';
 import { Header, Footer } from '../../components';
-import '../../styles/App.less';
+import '../../styles/main.less';
 
 const { Content } = Layout;
 
