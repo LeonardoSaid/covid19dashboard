@@ -7,8 +7,11 @@ module.exports = {
       options: {
         lessLoaderOptions: {
           lessOptions: {
-            modifyVars: { 
-                '@primary-color': '#1DA57A'  
+            modifyVars: {
+                '@primary-color': '#c81d25',
+                '@layout-header-background': '#242423',
+                '@layout-footer-background': '#242423',
+                '@card-radius': '6px'
             },
             javascriptEnabled: true,
           },
