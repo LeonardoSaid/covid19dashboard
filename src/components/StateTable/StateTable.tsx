@@ -1,82 +1,48 @@
 import React from 'react';
-import { Table, Tag, Space } from 'antd';
+import { Table } from 'antd';
+import { summary } from '../../mock/brazilapi';
 
 const columns = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      render: (text:any) => <a>{text}</a>,
+      title: 'Estado',
+      dataIndex: 'state',
+      key: 'state'
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: 'UF',
+      dataIndex: 'uf',
+      key: 'uf'
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'Casos Confirmados',
+      dataIndex: 'cases',
+      key: 'cases'
     },
     {
-      title: 'Tags',
-      key: 'tags',
-      dataIndex: 'tags',
-      render: (tags:any) => (
-        <>
-          {tags.map((tag:any) => {
-            let color = tag.length > 5 ? 'geekblue' : 'green';
-            if (tag === 'loser') {
-              color = 'volcano';
-            }
-            return (
-              <Tag color={color} key={tag}>
-                {tag.toUpperCase()}
-              </Tag>
-            );
-          })}
-        </>
-      ),
+      title: 'Óbitos',
+      dataIndex: 'deaths',
+      key: 'deaths'
     },
     {
-      title: 'Action',
-      key: 'action',
-      render: (text:any, record:any) => (
-        <Space size="middle">
-          <a>Invite {record.name}</a>
-          <a>Delete</a>
-        </Space>
-      ),
-    },
-  ];
-  
-  const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      tags: ['nice', 'developer'],
+      title: 'Casos Suspeitos',
+      dataIndex: 'suspects',
+      key: 'suspects'
     },
     {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      tags: ['loser'],
+      title: 'Casos Descartados',
+      dataIndex: 'refuses',
+      key: 'refuses'
     },
     {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-      tags: ['cool', 'teacher'],
-    },
+      title: 'Taxa Letalidade',
+      key: 'lethal',
+      render: (text:any, record:any) => ((record.deaths/record.cases)*100).toFixed(1)
+    }
   ];
 
 export const StateTable = () => {
     return (
-        <Table columns={columns} dataSource={data} />
+        <Table columns={columns} dataSource={summary.data} />
     );
 }
 
