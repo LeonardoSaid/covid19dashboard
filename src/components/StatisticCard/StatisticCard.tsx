@@ -13,8 +13,8 @@ export const StatisticCard = (props: any) => {
                 <Col>
                     <Statistic
                         title={<span className="stats-title">{titles[props.type]}</span>}
-                        //value={props.users && props.users.TotalConfirmed}
-                        value={Math.random() * 100000}
+                        value={props.loading || props.data.length === 0 ? -1 : props.data[props.data.length-1].Cases}
+                        //value={Math.random() * 100000}
                         precision={0}
                         valueStyle={{ color: '#303030' }}
                     />

@@ -1,35 +1,55 @@
 import { Action } from 'redux';
 
-export interface User {
-  name: string;
-  age: number;
-}
-
 export interface LoadingState {
-  users: boolean;
+  brazilData: {
+    confirmed: boolean,
+    recovered: boolean,
+    deaths: boolean
+  };
 }
 
 export interface ApplicationState {
   loading: LoadingState;
-  users: User[];
+  brazilData: {
+      confirmed: Array<Object>,
+      recovered: Array<Object>,
+      deaths: Array<Object>
+  };
 }
 
 // action.types
 
-export interface LoadUsersRequest extends Action {
-  type: 'loadUsersRequest';
+export interface BrazilConfirmedRequest extends Action {
+  type: 'brazilConfirmedRequest';
 }
 
-export interface LoadUsersSuccess extends Action {
-  type: 'loadUsersSuccess';
-  users: User[];
+export interface BrazilRecoveredRequest extends Action {
+  type: 'brazilRecoveredRequest';
 }
 
-export interface LoadUsersError extends Action {
-  type: 'loadUsersError';
+export interface BrazilDeathsRequest extends Action {
+  type: 'brazilDeathsRequest';
+}
+
+export interface BrazilConfirmedSuccess extends Action {
+  type: 'brazilConfirmedSuccess';
+  payload: Array<Object>;
+}
+
+export interface BrazilRecoveredSuccess extends Action {
+  type: 'brazilRecoveredSuccess';
+  payload: Array<Object>;
+}
+
+export interface BrazilDeathsSuccess extends Action {
+  type: 'brazilDeathsSuccess';
+  payload: Array<Object>;
 }
 
 export type ApplicationAction =
-  | LoadUsersRequest
-  | LoadUsersSuccess
-  | LoadUsersError;
+  | BrazilConfirmedRequest
+  | BrazilRecoveredRequest
+  | BrazilDeathsRequest
+  | BrazilConfirmedSuccess
+  | BrazilRecoveredSuccess
+  | BrazilDeathsSuccess;
