@@ -1,14 +1,50 @@
-import { User, LoadUsersRequest, LoadUsersSuccess, LoadUsersError } from './types';
+import {
+  BrazilConfirmedRequest,
+  BrazilConfirmedSuccess,
+  BrazilRecoveredRequest,
+  BrazilRecoveredSuccess,
+  BrazilDeathsRequest,
+  BrazilDeathsSuccess,
+  BrazilConfirmedError,
+  BrazilDeathsError,
+  BrazilRecoveredError
+} from './types';
 
-export const loadUsersRequest = (): LoadUsersRequest => ({
-  type: 'loadUsersRequest',
+export const brazilConfirmedRequest = (): BrazilConfirmedRequest => ({
+  type: 'brazilConfirmedRequest',
 });
 
-export const loadUsersSuccess = (users: User[]): LoadUsersSuccess => ({
-  type: 'loadUsersSuccess',
-  users,
+export const brazilConfirmedSuccess = (payload: object[]): BrazilConfirmedSuccess => ({
+  type: 'brazilConfirmedSuccess',
+  payload,
 });
 
-export const loadUsersError = (): LoadUsersError => ({
-  type: 'loadUsersError',
+export const brazilRecoveredRequest = (): BrazilRecoveredRequest => ({
+  type: 'brazilRecoveredRequest',
+});
+
+export const brazilRecoveredSuccess = (payload: object[]): BrazilRecoveredSuccess => ({
+  type: 'brazilRecoveredSuccess',
+  payload,
+});
+
+export const brazilDeathsRequest = (): BrazilDeathsRequest => ({
+  type: 'brazilDeathsRequest',
+});
+
+export const brazilDeathsSuccess = (payload: object[]): BrazilDeathsSuccess => ({
+  type: 'brazilDeathsSuccess',
+  payload,
+});
+
+export const brazilRecoveredError = (): BrazilRecoveredError => ({
+  type: 'brazilRecoveredError',
+});
+
+export const brazilConfirmedError = (): BrazilConfirmedError => ({
+  type: 'brazilConfirmedError',
+});
+
+export const brazilDeathsError = (): BrazilDeathsError => ({
+  type: 'brazilDeathsError',
 });

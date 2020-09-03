@@ -1,10 +1,12 @@
 import Footer from './Footer/Footer';
 import Header from './Header/Header';
-import BarChart from './BarChart/BarChart';
-import StateTable from './StateTable/StateTable';
-import PieChart from './PieChart/PieChart';
-import StateSearch from './StateSearch/StateSearch';
-import StatisticCard from './StatisticCard/StatisticCard';
+import BarChart from './Charts/BarChart/BarChart';
+import StateTable from './State/StateTable/StateTable';
+import PieChart from './Charts/PieChart/PieChart';
+import StateSearch from './State/StateSearch/StateSearch';
+import StatisticCard from './Statistics/StatisticCard/StatisticCard';
+import StatisticGroupBrazil from './Statistics/StatisticGroupBrazil/StatisticGroupBrazil';
+import GeoChart from './Charts/GeoChart/GeoChart';
 
 export {
     Header,
@@ -13,5 +15,7 @@ export {
     StateTable,
     PieChart,
     StateSearch,
-    StatisticCard
+    StatisticCard,
+    StatisticGroupBrazil,
+    GeoChart
 }

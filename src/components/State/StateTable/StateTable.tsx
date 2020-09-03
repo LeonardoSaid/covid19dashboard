@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
-import { summary } from '../../mock/brazilapi';
+import { summary } from '../../../mock/brazilapi';
 
 const columns = [
     {

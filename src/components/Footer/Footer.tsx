@@ -1,5 +1,6 @@
 import React from 'react';
 import { Layout, Divider } from 'antd';
+import './Footer.less';
 
 const { Footer } = Layout;
 

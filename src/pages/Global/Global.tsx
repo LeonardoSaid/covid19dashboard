@@ -1,16 +1,21 @@
 import React from 'react';
 import { Card, Row, Col } from 'antd';
-import { BarChart, StateTable, PieChart, StateSearch, StatisticCard } from '../../components/index';
+import { StatisticCard, GeoChart } from '../../components/index';
+import { data as geoData } from '../../mock/nivo/choropleth';
 
 export const Global = (props: any): JSX.Element => {
     return (
         <>
-            <Row gutter={16}>
-                <Col span={6}><StatisticCard type={0} /></Col>
-                <Col span={6}><StatisticCard type={1} /></Col>
-                <Col span={6}><StatisticCard type={2} /></Col>
-                <Col span={6}><StatisticCard type={3} /></Col>
-            </Row>
+            {/* <Row gutter={16}>
+                <Col span={6}><StatisticCard type={0} loading={true} data={[]} /></Col>
+                <Col span={6}><StatisticCard type={1} loading={true} data={[]} /></Col>
+                <Col span={6}><StatisticCard type={2} loading={true} data={[]} /></Col>
+                <Col span={6}><StatisticCard type={3} loading={true} data={[]} /></Col>
+            </Row> */}
+
+            <Card style={{ marginTop: '2rem' }}>
+                <GeoChart data={geoData} height={window.innerHeight /2} />
+            </Card>
         
             <Card style={{ marginTop: '2rem' }}>
                 <p>geo chart, clica nele carrega outro widget abaixo com info e bandeira</p>
