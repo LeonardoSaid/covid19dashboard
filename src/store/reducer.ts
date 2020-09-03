@@ -43,8 +43,59 @@ const reducer = (state = initialState, action: ApplicationAction) => {
           confirmed: action.payload
         }
       };
-    default:
-      return state;
+    case "brazilRecoveredRequest":
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          brazilData: {
+            ...state.loading.brazilData,
+            recovered: true
+          }
+        }
+      };
+    case "brazilRecoveredSuccess":
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          brazilData: {
+            ...state.loading.brazilData,
+            recovered: false
+          }
+        },
+        brazilData: {
+          ...state.brazilData,
+          recovered: action.payload
+        }
+      };
+    case "brazilDeathsRequest":
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          brazilData: {
+            ...state.loading.brazilData,
+            deaths: true
+          }
+        }
+      };
+    case "brazilDeathsSuccess":
+      return {
+        ...state,
+        loading: {
+          ...state.loading,
+          brazilData: {
+            ...state.loading.brazilData,
+            deaths: false
+          }
+        },
+        brazilData: {
+          ...state.brazilData,
+          deaths: action.payload
+        }
+      };
+    default: return state;
   }
 }
 

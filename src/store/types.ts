@@ -11,9 +11,9 @@ export interface LoadingState {
 export interface ApplicationState {
   loading: LoadingState;
   brazilData: {
-      confirmed: Array<Object>,
-      recovered: Array<Object>,
-      deaths: Array<Object>
+      confirmed: Array<object>,
+      recovered: Array<object>,
+      deaths: Array<object>
   };
 }
 
@@ -33,17 +33,17 @@ export interface BrazilDeathsRequest extends Action {
 
 export interface BrazilConfirmedSuccess extends Action {
   type: 'brazilConfirmedSuccess';
-  payload: Array<Object>;
+  payload: Array<object>;
 }
 
 export interface BrazilRecoveredSuccess extends Action {
   type: 'brazilRecoveredSuccess';
-  payload: Array<Object>;
+  payload: Array<object>;
 }
 
 export interface BrazilDeathsSuccess extends Action {
   type: 'brazilDeathsSuccess';
-  payload: Array<Object>;
+  payload: Array<object>;
 }
 
 export type ApplicationAction =
