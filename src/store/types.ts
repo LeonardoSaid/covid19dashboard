@@ -11,14 +11,13 @@ export interface LoadingState {
 export interface ApplicationState {
   loading: LoadingState;
   brazilData: {
-      confirmed: Array<object>,
-      recovered: Array<object>,
-      deaths: Array<object>
+      confirmed: object[],
+      recovered: object[],
+      deaths: object[]
   };
 }
 
-// action.types
-
+//request
 export interface BrazilConfirmedRequest extends Action {
   type: 'brazilConfirmedRequest';
 }
@@ -31,19 +30,33 @@ export interface BrazilDeathsRequest extends Action {
   type: 'brazilDeathsRequest';
 }
 
+//success
 export interface BrazilConfirmedSuccess extends Action {
   type: 'brazilConfirmedSuccess';
-  payload: Array<object>;
+  payload: object[];
 }
 
 export interface BrazilRecoveredSuccess extends Action {
   type: 'brazilRecoveredSuccess';
-  payload: Array<object>;
+  payload: object[];
 }
 
 export interface BrazilDeathsSuccess extends Action {
   type: 'brazilDeathsSuccess';
-  payload: Array<object>;
+  payload: object[];
+}
+
+//error
+export interface BrazilConfirmedError extends Action {
+  type: 'brazilConfirmedError';
+}
+
+export interface BrazilRecoveredError extends Action {
+  type: 'brazilRecoveredError';
+}
+
+export interface BrazilDeathsError extends Action {
+  type: 'brazilDeathsError';
 }
 
 export type ApplicationAction =
@@ -52,4 +65,7 @@ export type ApplicationAction =
   | BrazilDeathsRequest
   | BrazilConfirmedSuccess
   | BrazilRecoveredSuccess
-  | BrazilDeathsSuccess;
+  | BrazilDeathsSuccess
+  | BrazilConfirmedError
+  | BrazilRecoveredError
+  | BrazilDeathsError

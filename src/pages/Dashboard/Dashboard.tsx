@@ -6,10 +6,8 @@ import { data as pieData } from '../../mock/nivo/pie';
 
 const { TabPane } = Tabs;
 
-export const Dashboard = (props: any): JSX.Element => {
-
-    return (
-        <>
+export const Dashboard = (): JSX.Element => (
+    <>
             <StatisticGroupBrazil />
 
             <Card style={{ marginTop: '2rem', marginBottom: '2rem' }} title="Comparação dos estados">
@@ -43,7 +41,6 @@ export const Dashboard = (props: any): JSX.Element => {
                 </Col>
             </Row>
         </>
-    );
-};
+);
 
 export default Dashboard;

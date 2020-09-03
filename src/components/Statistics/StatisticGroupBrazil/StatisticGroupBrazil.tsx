@@ -1,23 +1,20 @@
 import React from 'react';
-import { Row, Col, Space } from 'antd';
+import { Row, Col } from 'antd';
 import { connect } from 'react-redux';
-import { ArrowUpOutlined, ExceptionOutlined, MedicineBoxOutlined, ExperimentOutlined, PercentageOutlined, InfoCircleOutlined } from '@ant-design/icons';
+import { ArrowUpOutlined, ExceptionOutlined, MedicineBoxOutlined, ExperimentOutlined, PercentageOutlined } from '@ant-design/icons';
 import { StatisticCard } from '../../index';
 
-// use typescript to validate props
-// skeleton loading put on card
-
-function getValue(arr:any) {
-    if(arr.length > 0)
+function getValue(arr: any): number {
+    if (arr.length > 0)
         return arr.slice(-1)[0].Cases;
     else
         return 0;
 }
 
-const Extra = (props: any) => (
+const Extra = (props: {data: any}) => (
     props.data.length === 2
-    ? <span><ArrowUpOutlined style={{ color: '#3f8600' }} /> {(props.data[1].Cases-props.data[0].Cases)} novos casos</span>
-    : null
+        ? <span><ArrowUpOutlined style={{ color: '#3f8600' }} /> {(props.data[1].Cases - props.data[0].Cases)} novos casos</span>
+        : null
 )
 
 const StatisticGroupBrazil = (props: any) => {
@@ -62,12 +59,11 @@ const StatisticGroupBrazil = (props: any) => {
             <Col span={6}>
                 <StatisticCard
                     title="Letalidade"
-                    value={getValue(props.brazilData.deaths)/getValue(props.brazilData.confirmed)*100}
+                    value={getValue(props.brazilData.deaths) / getValue(props.brazilData.confirmed) * 100}
                     precision={3}
                     suffix="%"
                     avatarIcon={<PercentageOutlined />}
                     avatarColor="#3a86ff"
-                    extra={<Space><InfoCircleOutlined />Razão entre óbitos e casos</Space>}
                     loading={props.loading.confirmed && props.loading.deaths}
                 />
             </Col>

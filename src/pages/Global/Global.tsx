@@ -6,12 +6,12 @@ import { data as geoData } from '../../mock/nivo/choropleth';
 export const Global = (props: any): JSX.Element => {
     return (
         <>
-            <Row gutter={16}>
+            {/* <Row gutter={16}>
                 <Col span={6}><StatisticCard type={0} loading={true} data={[]} /></Col>
                 <Col span={6}><StatisticCard type={1} loading={true} data={[]} /></Col>
                 <Col span={6}><StatisticCard type={2} loading={true} data={[]} /></Col>
                 <Col span={6}><StatisticCard type={3} loading={true} data={[]} /></Col>
-            </Row>
+            </Row> */}
 
             <Card style={{ marginTop: '2rem' }}>
                 <GeoChart data={geoData} height={window.innerHeight /2} />

@@ -5,7 +5,6 @@ import './Header.less';
 
 const { Header } = Layout;
 
-
 export const HeaderComponent = (props: any): JSX.Element => {
 
     const currentLocation = (props.currentLocation === "/")

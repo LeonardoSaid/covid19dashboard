@@ -1,3 +1,4 @@
+import produce from 'immer';
 import { ApplicationState, ApplicationAction } from './types';
 
 export const initialState: ApplicationState = {
@@ -18,85 +19,47 @@ export const initialState: ApplicationState = {
 const reducer = (state = initialState, action: ApplicationAction) => {
   switch (action.type) {
     case "brazilConfirmedRequest":
-      return {
-        ...state,
-        loading: {
-          ...state.loading,
-          brazilData: {
-            ...state.loading.brazilData,
-            confirmed: true
-          }
-        }
-      };
+      return produce(state, draft => {
+        draft.loading.brazilData.confirmed = true;
+      });
     case "brazilConfirmedSuccess":
-      return {
-        ...state,
-        loading: {
-          ...state.loading,
-          brazilData: {
-            ...state.loading.brazilData,
-            confirmed: false
-          }
-        },
-        brazilData: {
-          ...state.brazilData,
-          confirmed: action.payload
-        }
-      };
+      return produce(state, draft => {
+        draft.loading.brazilData.confirmed = false;
+        draft.brazilData.confirmed = action.payload;
+      });
     case "brazilRecoveredRequest":
-      return {
-        ...state,
-        loading: {
-          ...state.loading,
-          brazilData: {
-            ...state.loading.brazilData,
-            recovered: true
-          }
-        }
-      };
+      return produce(state, draft => {
+        draft.loading.brazilData.recovered = true;
+      });
     case "brazilRecoveredSuccess":
-      return {
-        ...state,
-        loading: {
-          ...state.loading,
-          brazilData: {
-            ...state.loading.brazilData,
-            recovered: false
-          }
-        },
-        brazilData: {
-          ...state.brazilData,
-          recovered: action.payload
-        }
-      };
+      return produce(state, draft => {
+        draft.loading.brazilData.recovered = false;
+        draft.brazilData.recovered = action.payload;
+      });
     case "brazilDeathsRequest":
-      return {
-        ...state,
-        loading: {
-          ...state.loading,
-          brazilData: {
-            ...state.loading.brazilData,
-            deaths: true
-          }
-        }
-      };
+      return produce(state, draft => {
+        draft.loading.brazilData.deaths = true;
+      });
     case "brazilDeathsSuccess":
-      return {
-        ...state,
-        loading: {
-          ...state.loading,
-          brazilData: {
-            ...state.loading.brazilData,
-            deaths: false
-          }
-        },
-        brazilData: {
-          ...state.brazilData,
-          deaths: action.payload
-        }
-      };
+      return produce(state, draft => {
+        draft.loading.brazilData.deaths = false;
+        draft.brazilData.deaths = action.payload;
+      });
+    case "brazilRecoveredError":
+      return produce(state, draft => {
+        draft.loading.brazilData.recovered = false;
+      });
+    case "brazilConfirmedError":
+      return produce(state, draft => {
+        draft.loading.brazilData.confirmed = false;
+      });
+    case "brazilDeathsError":
+      return produce(state, draft => {
+        draft.loading.brazilData.deaths = false;
+      });
     default: return state;
   }
+
 }
 
 export default reducer;

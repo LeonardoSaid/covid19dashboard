@@ -1,10 +1,21 @@
 import React from 'react';
-import { Card, Statistic, Row, Col, Avatar, Skeleton } from 'antd';
+import { Card, Statistic, Row, Col, Avatar } from 'antd';
 import './StatisticCard.less';
 
-export const StatisticCard = (props: any) => {
+interface StatisticCardProps {
+    title: string,
+    value: number,
+    precision: number,
+    suffix?: string,
+    avatarIcon: JSX.Element,
+    avatarColor: string,
+    extra?: JSX.Element | null,
+    loading: boolean
+}
+
+export const  StatisticCard: React.SFC<StatisticCardProps> = (props) => {
     return (
-        <Card bordered loading={props.loading}>
+        <Card bordered loading={props.loading} style={{ height: '100%' }}>
             <Row justify="space-between">
                 <Col>
                     <Statistic

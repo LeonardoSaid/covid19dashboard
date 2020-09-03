@@ -1,4 +1,4 @@
-//import request from '../utils/request';
+import request from '../utils/request.js';
 import { brazilConfirmed, brazilRecovered, brazilDeaths } from '../mock/brazilapi';
 
 export async function loadBrazilStatusConfirmed(fromDate:string, toDate:string) {

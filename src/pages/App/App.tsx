@@ -10,7 +10,13 @@ import './App.less';
 
 const { Content } = Layout;
 
-export const App = (props:any): JSX.Element => {
+interface AppProps {
+  loadBrazilConfirmed(): void,
+  loadBrazilRecovered(): void,
+  loadBrazilDeaths(): void
+}
+
+export const App: React.SFC<AppProps> = (props) => {
 
   useEffect(() => {
     props.loadBrazilConfirmed();
