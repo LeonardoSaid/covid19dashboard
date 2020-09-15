@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Radio } from 'antd';
+import { Form, Input, Button, Space, Select } from 'antd';
+import StateDetails from './StateDetails';
+import { states } from '../../utils/state';
 
 export const StateSearch = (props: any) => {
 
     const [form] = Form.useForm();
+    const stateOptions = states.map(state => <Select.Option value={state.uf}>{state.state}</Select.Option>)
 
     return (
-        <>
+        <Space direction="vertical" size="large">
             <Form
                 layout="inline"
                 form={form}
             >
                 <Form.Item label="Estado">
-                    <Input placeholder="input placeholder" />
+                    <Select style={{ width: 150 }}>{stateOptions}</Select>
                 </Form.Item>
                 <Form.Item label="Data">
                     <Input placeholder="input placeholder" />
@@ -22,14 +25,8 @@ export const StateSearch = (props: any) => {
                 </Form.Item>
             </Form>
 
-            <p>uf, state</p>
-            <p>cases</p>
-            <p>deaths</p>
-            <p>suspects</p>
-            <p>refuses</p>
-            <p>broadcast? comment?</p>
-            <p>datetime</p>
-        </>
+            <StateDetails />
+        </Space>
     );
 }
 
