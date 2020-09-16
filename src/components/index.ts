@@ -3,7 +3,7 @@ import Header from './Header/Header';
 import BarChart from './Charts/BarChart/BarChart';
 import StateTable from './StateTable/StateTable';
 import PieChart from './Charts/PieChart/PieChart';
-import StateSearch from './StateSearch/StateSearch';
+import StateSearchContainer from './StateSearch/StateSearchContainer';
 import StatisticCard from './Statistics/StatisticCard/StatisticCard';
 import StatisticGroupBrazil from './Statistics/StatisticGroupBrazil/StatisticGroupBrazil';
 import GeoChart from './Charts/GeoChart/GeoChart';
@@ -14,7 +14,7 @@ export {
     BarChart,
     StateTable,
     PieChart,
-    StateSearch,
+    StateSearchContainer,
     StatisticCard,
     StatisticGroupBrazil,
     GeoChart

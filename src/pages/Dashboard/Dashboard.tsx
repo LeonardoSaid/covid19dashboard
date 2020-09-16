@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Row, Col, Tabs } from 'antd';
-import { BarChart, StateTable, PieChart, StateSearch, StatisticGroupBrazil } from '../../components/index';
+import { BarChart, StateTable, PieChart, StateSearchContainer, StatisticGroupBrazil } from '../../components/index';
 import { summary } from '../../mock/brazilapi';
 import { data as pieData } from '../../mock/nivo/pie';
 
@@ -36,7 +36,7 @@ export const Dashboard = (): JSX.Element => (
 
                 <Col span={12}>
                     <Card title="Casos em um estado por data específica" style={{ width: '100%' }}>
-                        <StateSearch />
+                        <StateSearchContainer />
                     </Card>
                 </Col>
             </Row>

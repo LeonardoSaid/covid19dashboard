@@ -1,50 +1,53 @@
-import {
-  BrazilConfirmedRequest,
-  BrazilConfirmedSuccess,
-  BrazilRecoveredRequest,
-  BrazilRecoveredSuccess,
-  BrazilDeathsRequest,
-  BrazilDeathsSuccess,
-  BrazilConfirmedError,
-  BrazilDeathsError,
-  BrazilRecoveredError
-} from './types';
+import * as types from './types';
 
-export const brazilConfirmedRequest = (): BrazilConfirmedRequest => ({
+export const brazilConfirmedRequest = (): types.BrazilConfirmedRequest => ({
   type: 'brazilConfirmedRequest',
 });
 
-export const brazilConfirmedSuccess = (payload: object[]): BrazilConfirmedSuccess => ({
+export const brazilConfirmedSuccess = (payload: object[]): types.BrazilConfirmedSuccess => ({
   type: 'brazilConfirmedSuccess',
   payload,
 });
 
-export const brazilRecoveredRequest = (): BrazilRecoveredRequest => ({
+export const brazilRecoveredRequest = (): types.BrazilRecoveredRequest => ({
   type: 'brazilRecoveredRequest',
 });
 
-export const brazilRecoveredSuccess = (payload: object[]): BrazilRecoveredSuccess => ({
+export const brazilRecoveredSuccess = (payload: object[]): types.BrazilRecoveredSuccess => ({
   type: 'brazilRecoveredSuccess',
   payload,
 });
 
-export const brazilDeathsRequest = (): BrazilDeathsRequest => ({
+export const brazilDeathsRequest = (): types.BrazilDeathsRequest => ({
   type: 'brazilDeathsRequest',
 });
 
-export const brazilDeathsSuccess = (payload: object[]): BrazilDeathsSuccess => ({
+export const brazilDeathsSuccess = (payload: object[]): types.BrazilDeathsSuccess => ({
   type: 'brazilDeathsSuccess',
   payload,
 });
 
-export const brazilRecoveredError = (): BrazilRecoveredError => ({
+export const brazilRecoveredError = (): types.BrazilRecoveredError => ({
   type: 'brazilRecoveredError',
 });
 
-export const brazilConfirmedError = (): BrazilConfirmedError => ({
+export const brazilConfirmedError = (): types.BrazilConfirmedError => ({
   type: 'brazilConfirmedError',
 });
 
-export const brazilDeathsError = (): BrazilDeathsError => ({
+export const brazilDeathsError = (): types.BrazilDeathsError => ({
   type: 'brazilDeathsError',
+});
+
+export const stateSearchRequest = (): types.StateSearchRequest => ({
+  type: 'stateSearchRequest'
+});
+
+export const stateSearchError = (): types.StateSearchError => ({
+  type: 'stateSearchError'
+});
+
+export const stateSearchSuccess = (payload: object | null | undefined): types.StateSearchSuccess => ({
+  type: 'stateSearchSuccess',
+  payload
 });
