@@ -4,7 +4,8 @@ export interface LoadingState {
   brazilData: {
     confirmed: boolean,
     recovered: boolean,
-    deaths: boolean
+    deaths: boolean,
+    stateSearch: boolean
   };
 }
 
@@ -13,7 +14,8 @@ export interface ApplicationState {
   brazilData: {
       confirmed: object[],
       recovered: object[],
-      deaths: object[]
+      deaths: object[],
+      stateSearch: object | null | undefined
   };
 }
 
@@ -28,6 +30,10 @@ export interface BrazilRecoveredRequest extends Action {
 
 export interface BrazilDeathsRequest extends Action {
   type: 'brazilDeathsRequest';
+}
+
+export interface StateSearchRequest extends Action {
+  type: 'stateSearchRequest';
 }
 
 //success
@@ -46,6 +52,11 @@ export interface BrazilDeathsSuccess extends Action {
   payload: object[];
 }
 
+export interface StateSearchSuccess extends Action {
+  type: 'stateSearchSuccess';
+  payload: object | null | undefined;
+}
+
 //error
 export interface BrazilConfirmedError extends Action {
   type: 'brazilConfirmedError';
@@ -59,6 +70,10 @@ export interface BrazilDeathsError extends Action {
   type: 'brazilDeathsError';
 }
 
+export interface StateSearchError extends Action {
+  type: 'stateSearchError';
+}
+
 export type ApplicationAction =
   | BrazilConfirmedRequest
   | BrazilRecoveredRequest
@@ -69,3 +84,6 @@ export type ApplicationAction =
   | BrazilConfirmedError
   | BrazilRecoveredError
   | BrazilDeathsError
+  | StateSearchRequest
+  | StateSearchSuccess
+  | StateSearchError

@@ -6,13 +6,15 @@ export const initialState: ApplicationState = {
     brazilData: {
       confirmed: false,
       recovered: false,
-      deaths: false
+      deaths: false,
+      stateSearch: false
     }
   },
   brazilData: {
     confirmed: [],
     recovered: [],
-    deaths: []
+    deaths: [],
+    stateSearch: null
   }
 }
 
@@ -56,6 +58,19 @@ const reducer = (state = initialState, action: ApplicationAction) => {
     case "brazilDeathsError":
       return produce(state, draft => {
         draft.loading.brazilData.deaths = false;
+      });
+    case "stateSearchRequest":
+      return produce(state, draft => {
+        draft.loading.brazilData.stateSearch = true;
+      });
+    case "stateSearchSuccess":
+      return produce(state, draft => {
+        draft.loading.brazilData.stateSearch = false;
+        draft.brazilData.stateSearch = action.payload;
+      });
+    case "stateSearchError":
+      return produce(state, draft => {
+        draft.loading.brazilData.stateSearch = false;
       });
     default: return state;
   }
