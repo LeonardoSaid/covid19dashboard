@@ -6,6 +6,7 @@ import PieChart from './Charts/PieChart/PieChart';
 import StateSearchContainer from './StateSearch/StateSearchContainer';
 import StatisticCard from './Statistics/StatisticCard/StatisticCard';
 import StatisticGroupBrazil from './Statistics/StatisticGroupBrazil/StatisticGroupBrazil';
+import StatisticGroupGlobal from './Statistics/StatisticGroupGlobal/StatisticGroupGlobal';
 import GeoChart from './Charts/GeoChart/GeoChart';
 
 export {
@@ -17,5 +18,6 @@ export {
     StateSearchContainer,
     StatisticCard,
     StatisticGroupBrazil,
+    StatisticGroupGlobal,
     GeoChart
 }

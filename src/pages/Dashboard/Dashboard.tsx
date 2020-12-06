@@ -3,11 +3,25 @@ import { Card, Row, Col, Tabs } from 'antd';
 import { BarChart, StateTable, PieChart, StateSearchContainer, StatisticGroupBrazil } from '../../components/index';
 import { summary } from '../../mock/brazilapi';
 import { data as pieData } from '../../mock/nivo/pie';
+import { regions } from '../../utils/state';
 
 const { TabPane } = Tabs;
 
-export const Dashboard = (): JSX.Element => (
-    <>
+export const Dashboard = (): JSX.Element => {
+
+    const formattedData = pieData.reduce((pv: any, cv: any) => {
+        pv.push({
+            ...cv,
+            value: summary
+                  .data
+                  .filter((state: any) => (regions as any)[cv.id].includes(state.uf))
+                  .reduce((pv, cv) => pv + cv.cases, 0)
+        });
+        return pv;
+    }, []);
+
+    return (
+        <>
             <StatisticGroupBrazil />
 
             <Card style={{ marginTop: '2rem', marginBottom: '2rem' }} title="Comparação dos estados">
@@ -30,7 +44,7 @@ export const Dashboard = (): JSX.Element => (
             <Row justify="space-between" gutter={16}>
                 <Col span={12}>
                     <Card title="Comparação por regiões" style={{ width: '100%' }}>
-                        <PieChart data={pieData} />
+                        <PieChart data={formattedData} />
                     </Card>
                 </Col>
 
@@ -41,6 +55,7 @@ export const Dashboard = (): JSX.Element => (
                 </Col>
             </Row>
         </>
-);
+    );
+}
 
 export default Dashboard;

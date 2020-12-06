@@ -129,12 +129,12 @@ export const states = [
 		"state": "Tocantins",
 		"region": "Norte"
 	}
-]
+];
 
 export const regions = {
-    norte: ['AM', 'RR', 'AP', 'PA', 'TO', 'RO', 'AC'],
-    nordeste: ['MA','PI','CE','RN','PE','PB','SE','AL','BA'],
-    centrooeste: ['MT', 'MS', 'GO'],
-    sudeste: ['SP', 'RJ', 'ES', 'MG'],
-    sul: ['PR', 'RS', 'SC']
-}
+    "Norte": ['AM', 'RR', 'AP', 'PA', 'TO', 'RO', 'AC'],
+    "Nordeste": ['MA','PI','CE','RN','PE','PB','SE','AL','BA'],
+    "Centro-Oeste": ['MT', 'MS', 'GO'],
+    "Sudeste": ['SP', 'RJ', 'ES', 'MG'],
+    "Sul": ['PR', 'RS', 'SC']
+};
